@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate - Elevate PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon Setup -->
+    <link rel="icon" href="icons/rounded.logo.png">
+</head>
+<body class="font-sans text-gray-200 bg-gray-900">
+    <div include-html="header.html"></div>
+
+    <!-- Hero Section with Animations -->
+    <section class="py-32 px-6 bg-gradient-to-br from-blue-900 via-indigo-900 to-gray-800 text-center relative overflow-hidden">
+        <!-- Subtle Background Animation -->
+        <div class="absolute inset-0 opacity-20 animate-pulse" style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <h1 class="text-6xl md:text-7xl font-extrabold text-white mb-8 leading-tight animate-fade-in">Elevate PRO: <br>Power Up Your Fitness</h1>
+            <p class="text-2xl text-gray-300 max-w-3xl mx-auto mb-10 animate-fade-in-delay">Unlock exclusive tools, AI-driven coaching, and a premium community to transform your workouts and achieve your goals faster.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in-delay-2">
+                <button class="bg-white text-blue-900 px-12 py-5 rounded-full hover:bg-gray-200 font-semibold text-xl transition-colors shadow-lg" onclick="showPopup()">Get PRO Now</button>
+                <button class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-full hover:bg-blue-800 font-semibold text-xl transition-colors" onclick="scrollToComparison()">Learn More</button>
+            </div>
+            <div class="mt-8 animate-fade-in-delay-2">
+                <span class="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full">Elevate PRO 1 Month Free Trial</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Elevate PRO -->
+    <section class="py-20 px-6 bg-gray-800">
+        <h2 class="text-4xl font-extrabold text-center text-white mb-16">Why Choose Elevate PRO?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div class="p-6 bg-gray-700 rounded-3xl shadow-lg text-center">
+                <img src="icons/ai.png" alt="AI Icon" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-white mb-4">AI-Powered Coaching</h3>
+                <p class="text-gray-300">AI coaching that helps you build custom workout routines and recipes to achieve your fitness goals.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-3xl shadow-lg text-center">
+                <img src="icons/chart.line.png" alt="Analytics Icon" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-white mb-4">Advanced Analytics</h3>
+                <p class="text-gray-300">Advanced analytics that track your workouts, exercise stats, and nutrition adherence.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-3xl shadow-lg text-center">
+                <img src="icons/create.png" alt="Community Icon" class="w-16 h-16 mx-auto mb-4">
+                <h3 class="text-xl font-bold text-white mb-4">Unlimited Recipe & Workout Creation</h3>
+                <p class="text-gray-300">Design your perfect meals and training plans with zero limits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free vs. PRO Comparison -->
+    <section id="comparison-section" class="py-16 px-6 bg-gray-900">
+        <h2 class="text-4xl font-extrabold text-center text-white mb-12">Free vs. PRO: What You Get</h2>
+        <div class="max-w-4xl mx-auto overflow-x-auto">
+            <table class="w-full text-gray-200 shadow-xl rounded-2xl overflow-hidden border-separate" style="border-spacing: 0; background: linear-gradient(135deg, #1f2937 0%, #111827 100%);">
+                <thead>
+                    <tr class="bg-gradient-to-r from-blue-700 to-blue-950 text-white">
+                        <th class="p-4 text-lg font-semibold text-left rounded-tl-2xl pl-6">Feature</th>
+                        <th class="p-4 text-lg font-semibold text-center">Free</th>
+                        <th class="p-4 text-lg font-semibold text-center rounded-tr-2xl">PRO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Workout Routine Creation</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Limited to 4</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Custom Exercise Creation</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">AI Workouts</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Limited to 5 uses</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-200 font-bold bg-gray-700/30">Unlimited uses</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Discover Workouts</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">In-Depth Exercise Tracking and Analytics</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Last 3 Months</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Workout History</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Workout Analytics</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Last 3 Months</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Monthly and Yearly Reports</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Goal Setting</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Body Measurements</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Progress Pictures</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Up to 10 pictures</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-200 font-bold bg-gray-700/30">Unlimited pictures</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Exercise Records</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Compare Exercises with Friends</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Custom Sets per Muscle Group</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Reminders</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Recipe Creation</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Limited to 8</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">AI Recipes</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Limited to 5 uses</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-200 font-bold bg-gray-700/30">Unlimited uses</td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Tracking Macronutrients and Micronutrients</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Health Tracking</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Foods Highest in Calories and Each Macro</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center"><img src="icons/circle_fill.png" alt="Cross" class="circle-icon mx-auto"></td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 border-b border-gray-600/50 pl-6 text-white">Nutrition Statistics</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center text-gray-300">Calories Only</td>
+                        <td class="p-4 border-b border-gray-600/50 text-center bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                    <tr class="hover:bg-gray-700/50 transition-all duration-200">
+                        <td class="p-4 rounded-bl-2xl pl-6 text-white">Percentage of Daily Goal</td>
+                        <td class="p-4 text-center rounded-bl-2xl text-gray-300">Calories Only</td>
+                        <td class="p-4 text-center rounded-br-2xl bg-gray-700/30"><img src="icons/tick.png" alt="Tick" class="checkmark-icon mx-auto"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-6 bg-gray-900">
+        <h2 class="text-4xl font-extrabold text-center text-white mb-16">Choose Your PRO Plan</h2>
+        <div id="pricing-plans" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Monthly Plan -->
+            <div class="pricing-card relative p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-4xl custom-shadow text-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_24px_rgba(255,255,255,0.3)]" style="box-shadow: 0 0 16px 4px rgba(255, 255, 255, 0.4);">
+                <div class="flex justify-center items-center mb-4">
+                    <img src="icons/dark.logo.png" alt="PRO Icon" class="w-6 h-auto object-contain mr-2">
+                    <span class="text-sm font-bold text-white uppercase tracking-wider">PRO</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-white uppercase mb-3 tracking-tight">Monthly</h3>
+                <p class="text-3xl font-bold text-white mb-3">$9.99<span class="text-base font-medium">/month</span></p>
+                <p class="text-sm text-gray-400 mb-6">Subscription billed monthly unless canceled anytime</p>
+                <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm uppercase hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg w-full" onclick="showPopup()">Get Elevate PRO</button>
+            </div>
+            <!-- Yearly Plan -->
+            <div class="pricing-card relative p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-4xl custom-shadow text-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_28px_rgba(59,130,246,0.5)] border-2 border-blue-600" style="box-shadow: 0 0 20px 6px rgba(59, 130, 246, 0.4);">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span class="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-md">Best Value</span>
+                </div>
+                <div class="flex justify-center items-center mb-4">
+                    <img src="icons/dark.logo.png" alt="PRO Icon" class="w-6 h-auto object-contain mr-2">
+                    <span class="text-sm font-bold text-white uppercase tracking-wider">PRO</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-white uppercase mb-3 tracking-tight">Yearly</h3>
+                <p class="text-3xl font-bold text-white mb-3">$99.99<span class="text-base font-medium">/year</span></p>
+                <p class="text-sm text-gray-400 mb-6">Subscription billed yearly unless canceled anytime</p>
+                <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm uppercase hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg w-full" onclick="showPopup()">Get Elevate PRO</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elevate PRO Features Section -->
+    <section class="py-20 px-6 bg-gray-800">
+        <h2 class="text-4xl font-extrabold text-center text-white mb-16">Explore Elevate PRO Features</h2>
+        <div class="max-w-6xl mx-auto space-y-16">
+            <!-- AI-Powered Coaching -->
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="icons/ai-coaching.png" alt="AI Coaching" class="w-full h-auto rounded-3xl larger-image">
+                </div>
+                <div class="md:w-1/2 text-gray-300">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI-Powered Coaching</h3>
+                    <ul class="space-y-4 list-disc list-inside">
+                        <li><span class="font-semibold">Custom Workout Routines:</span> Instantly generate workouts based on your goals, time availability, equipment access, and personal preferences.</li>
+                        <li><span class="font-semibold">Personalized Recipes:</span> Create meals tailored to your taste, fitness goals, calorie and macro targets, dietary needs, and favorite cuisines.</li>
+                        <li><span class="font-semibold">AI-Curated Plans:</span> From dynamic workouts to personalized meal recipes, our AI builds routines and nutrition plans that adapt to your lifestyle, goals, and progress — all in one place.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Advanced Analytics -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="icons/advanced-analytics.png" alt="Analytics Dashboard" class="w-full h-auto rounded-3xl larger-image">
+                </div>
+                <div class="md:w-1/2 text-gray-300">
+                    <h3 class="text-2xl font-bold text-white mb-4">Advanced Analytics</h3>
+                    <ul class="space-y-4 list-disc list-inside">
+                        <li><span class="font-semibold">Muscle-Specific Tracking:</span> Track sets per muscle group with customizable time ranges and intervals, visualized through intuitive graphs.</li>
+                        <li><span class="font-semibold">Exercise Stats Tracking:</span> Log and review detailed exercise data—weight, reps, predicted one-rep max, set volume, and duration—across any custom time range.</li>
+                        <li><span class="font-semibold">Nutrition & Hydration Tracking:</span> Log and analyze calories, macronutrients, micronutrients, and water intake to stay aligned with your goals.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Monthly and Yearly Reports -->
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="icons/report.png" alt="Nutrition Insights" class="w-full h-auto rounded-3xl larger-image">
+                </div>
+                <div class="md:w-1/2 text-gray-300">
+                    <h3 class="text-2xl font-bold text-white mb-4">Monthly and Yearly Reports</h3>
+                    <ul class="space-y-4 list-disc list-inside">
+                        <li><span class="font-semibold">Workout Performance Stats:</span> Analyze total sets, duration, volume, and number of workouts, sets per muscle groups and distributions, along with how they compare to previous periods.</li>
+                        <li><span class="font-semibold">Exercise Progress Highlights:</span> See personal records, top-performing exercises, and which movements have improved the most over time as well as your most trained exercises and muscles.</li>
+                        <li><span class="font-semibold">Nutrition Breakdown:</span> View insights into calorie, macro and micronutrient intake, and the days you were the closest to your targets.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="py-20 px-6 bg-gray-800">
+        <h2 class="text-4xl font-extrabold text-center text-white mb-16">Frequently Asked Questions</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="p-6 bg-gray-700 rounded-3xl">
+                <h3 class="text-xl font-semibold text-white mb-2">What’s included in Elevate PRO?</h3>
+                <p class="text-gray-300">AI coaching, advanced analytics, unlimited recipe and workout creation, and more—see the comparison table above!</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-3xl">
+                <h3 class="text-xl font-semibold text-white mb-2">Can I switch plans later?</h3>
+                <p class="text-gray-300">Yes, upgrade or downgrade anytime with no hassle.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-3xl">
+                <h3 class="text-xl font-semibold text-white mb-2">Is there a free trial?</h3>
+                <p class="text-gray-300">Yes! We offer a one month free trial, completely free of charge!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div id="proPopup" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl max-w-lg w-full mx-4 text-center shadow-2xl animate-popup">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Elevate PRO is Coming Soon!</h2>
+            <p class="text-lg text-gray-300 mb-6">Get ready to transform your fitness journey with Elevate PRO! Our premium features, including AI-powered coaching and advanced analytics, will be available when the app launches. Stay tuned for the ultimate workout experience!</p>
+            <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full font-bold text-sm uppercase hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-md hover:shadow-lg" onclick="hidePopup()">Got It!</button>
+        </div>
+    </div>
+
+    <div include-html="footer.html"></div>
+
+    <script src="scripts.js"></script>
+    <script>
+        async function loadIncludes() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (const elem of elements) {
+                const file = elem.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (!response.ok) throw new Error(`Failed to load ${file}`);
+                    const html = await response.text();
+                    elem.outerHTML = html;
+                } catch (error) {
+                    console.error(error);
+                    elem.innerHTML = `<p>Error loading ${file}</p>`;
+                }
+            }
+        }
+
+        // Popup functions
+        function showPopup() {
+            document.getElementById('proPopup').classList.remove('hidden');
+        }
+
+        function hidePopup() {
+            document.getElementById('proPopup').classList.add('hidden');
+        }
+
+        // Scroll to comparison section
+        function scrollToComparison() {
+            document.getElementById('comparison-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadIncludes().then(() => {
+                if (typeof populateProSteps === 'function') populateProSteps();
+                if (typeof populateFooter === 'function') populateFooter();
+                if (typeof setActiveNavLink === 'function') setActiveNavLink();
+                if (typeof setMobileActiveNavLink === 'function') setMobileActiveNavLink();
+
+                // Mobile menu toggle
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        if (typeof toggleMobileMenu === 'function') {
+                            toggleMobileMenu();
+                        } else {
+                            console.error('toggleMobileMenu function is not defined');
+                        }
+                    });
+                } else {
+                    console.error('Mobile menu button or menu not found');
+                }
+            });
+        });
+    </script>
+
+    <!-- Custom Animations and Styles -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDelay {
+            0% { opacity: 0; transform: translateY(20px); }
+            20% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDelay2 {
+            0% { opacity: 0; transform: translateY(20px); }
+            40% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes popup {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-fade-in-delay {
+            animation: fadeInDelay 1.5s ease-out forwards;
+        }
+        .animate-fade-in-delay-2 {
+            animation: fadeInDelay2 2s ease-out forwards;
+        }
+        .animate-popup {
+            animation: popup 0.3s ease-out forwards;
+        }
+
+        /* Override pricing-card background */
+        .pricing-card {
+            background: none !important;
+        }
+
+        /* Make images in feature section larger */
+        .larger-image {
+            transform: scale(1.2); /* Increase size by 20% */
+        }
+
+        /* Adjust image size for mobile devices */
+        @media (max-width: 640px) {
+            .larger-image {
+                transform: scale(1); /* Remove scaling on mobile */
+            }
+        }
+    </style>
+</body>
+</html>
