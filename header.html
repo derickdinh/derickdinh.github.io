@@ -84,4 +84,28 @@
             transform: scaleY(0);
         }
     }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+        #header {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #nav-menu {
+            display: none !important; /* Hide desktop navigation in mobile view */
+        }
+
+        .flex.items-center img {
+            height: 2.5rem; /* Ensure logo remains visible */
+            max-width: 50%; /* Prevent logo from overflowing */
+            object-fit: contain;
+        }
+
+        #mobile-menu-btn {
+            display: block; /* Ensure mobile menu button is visible */
+            position: relative;
+            z-index: 30; /* Keep button above other elements */
+        }
+    }
 </style>
