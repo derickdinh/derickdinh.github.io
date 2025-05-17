@@ -299,22 +299,6 @@
                 if (typeof populateFeatures === 'function') populateFeatures();
                 if (typeof populateFooter === 'function') populateFooter();
                 if (typeof setActiveNavLink === 'function') setActiveNavLink();
-                if (typeof setMobileActiveNavLink === 'function') setMobileActiveNavLink();
-
-                // Mobile menu toggle
-                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenuBtn && mobileMenu) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        if (typeof toggleMobileMenu === 'function') {
-                            toggleMobileMenu();
-                        } else {
-                            console.error('toggleMobileMenu function is not defined');
-                        }
-                    });
-                } else {
-                    console.error('Mobile menu button or menu not found');
-                }
             });
         });
     </script>
