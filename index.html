@@ -524,17 +524,16 @@
                 object-fit: contain;
             }
             #light-mode-btn, #dark-mode-btn {
-                width: 5rem !important; /* Slightly smaller buttons for mobile */
-                height: 5rem !important;
-                padding: 0 !important;
+                width: 5rem !important; /* Square button */
+                height: 5rem !important; /* Square button */
                 border-radius: 1.5rem !important;
                 overflow: hidden !important;
             }
             #light-mode-btn img, #dark-mode-btn img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: fill !important;
-                object-position: center !important;
+                object-fit: cover !important; /* Use cover to fill the button */
+                object-position: center !important; /* Center the image */
                 border-radius: 1.5rem !important;
                 margin: 0 !important;
                 padding: 0 !important;
