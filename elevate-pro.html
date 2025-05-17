@@ -320,7 +320,7 @@
         }
         @keyframes fadeInDelay2 {
             0% { opacity: 0; transform: translateY(20px); }
-            40% { opacity: 0; transform: translateY(20px); }
+            40% { opacity: 0; transform: transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
         @keyframes popup {
@@ -351,9 +351,15 @@
         }
 
         /* Adjust image size for mobile devices */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .larger-image {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                margin-right: calc(-50vw + 50%);
                 transform: scale(1); /* Remove scaling on mobile */
+                max-width: none;
+                height: auto;
+                object-fit: contain;
             }
         }
     </style>
