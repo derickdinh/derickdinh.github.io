@@ -15,7 +15,7 @@
     <section class="hero-gradient flex items-center justify-center px-6 py-6 relative overflow-hidden" id="home">
         <!-- Centered content -->
         <div class="max-w-lg z-10 flex flex-col items-center text-center">
-            <img src="icons/App Icon iOS.png" width="120" class="rounded-3xl shadow-2xl mb-6 animate-fade-in">
+            <img src="icons/App Icon iOS.png" width="120" class="rounded-3xl shadow-2xl mb-6 animate-fade-in hero-logo">
             <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight animate-fade-in"></h1>
             <p id="hero-subtitle" class="text-md md:text-lg text-gray-700 mb-6 max-w-md animate-fade-in-delay"></p>
             <form id="waitlist-form" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full max-w-md animate-fade-in-delay-2">
@@ -512,6 +512,11 @@
             }
             .conveyor-image {
                 animation: conveyorMove 25s linear infinite;
+            }
+            .hero-logo {
+                width: 150px !important; /* Increase logo size in mobile */
+                height: 150px !important; /* Ensure square aspect ratio */
+                object-fit: contain;
             }
         }
         @media (min-width: 769px) {
