@@ -151,7 +151,6 @@ function openPopup(element, title, description, imageSrc, features) {
 
         popupContent.addEventListener('animationend', () => {
             popupContent.classList.remove('appear');
-        
         }, { once: true });
     }
 }
@@ -333,15 +332,21 @@ function setupMobileMenu() {
 
     console.log('Setting up mobile menu listeners');
 
-    mobileMenuBtn.onclick = (e) => {
-        acknowledgeEvent(e);
-        toggleMobileMenu();
-    };
+    // Clear any existing listeners to prevent duplicates
+    mobileMenuBtn.replaceWith(mobileMenuBtn.cloneNode(true));
+    const newMobileMenuBtn = document.getElementById('mobile-menu-btn');
 
-    mobileMenu.onclick = (e) => {
+    newMobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
         const link = e.target.closest('.mobile-nav-link');
         if (link) {
-            acknowledgeEvent(e);
+            e.preventDefault();
+            e.stopPropagation();
             const href = link.getAttribute('href');
             mobileMenu.classList.remove('menu-open');
             mobileMenu.classList.add('menu-close');
@@ -356,7 +361,7 @@ function setupMobileMenu() {
                 console.log(`Navigating to ${href}`);
             }, 400);
         }
-    };
+    });
 
     function setMobileActiveNavLink() {
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -374,7 +379,7 @@ function setupMobileMenu() {
     }
 
     setMobileActiveNavLink();
-    window.addEventListener('popstate', setMobileActiveNavLink);
+    // Remove popstate listener to prevent menu reset on navigation
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -392,15 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                acknowledgeEvent(e);
+                e.preventDefault();
+                e.stopPropagation();
                 scrollToSection(this.getAttribute('href'));
             });
-        });
-
-        window.addEventListener('popstate', () => {
-            console.log('Popstate: Re-setting navigation');
-            setActiveNavLink();
-            setupMobileMenu();
         });
     });
 });
