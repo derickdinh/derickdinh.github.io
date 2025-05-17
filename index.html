@@ -296,6 +296,14 @@
             img.onerror = () => console.error(`Failed to load favicon: ${favicon.href} (rel: ${favicon.rel})`);
         });
 
+        // Debug button image dimensions
+        const lightModeImg = document.querySelector('#light-mode-btn img');
+        const darkModeImg = document.querySelector('#dark-mode-btn img');
+        lightModeImg.onload = () => console.log(`Light mode image: ${lightModeImg.naturalWidth}x${lightModeImg.naturalHeight}`);
+        darkModeImg.onload = () => console.log(`Dark mode image: ${darkModeImg.naturalWidth}x${darkModeImg.naturalHeight}`);
+        lightModeImg.onerror = () => console.error('Failed to load light mode image');
+        darkModeImg.onerror = () => console.error('Failed to load dark mode image');
+
         // Handle waitlist form submission
         const waitlistForm = document.getElementById('waitlist-form');
         if (waitlistForm) {
@@ -528,15 +536,18 @@
                 height: 5rem !important; /* Square button */
                 border-radius: 1.5rem !important;
                 overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             #light-mode-btn img, #dark-mode-btn img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: cover !important; /* Use cover to fill the button */
+                object-fit: fill !important; /* Stretch to fill, matching desktop */
                 object-position: center !important; /* Center the image */
                 border-radius: 1.5rem !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                display: block !important; /* Remove any inline spacing */
             }
             .cta-card {
                 margin-bottom: 2rem !important; /* Adjusted for mobile */
