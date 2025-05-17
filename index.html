@@ -87,13 +87,13 @@
                 <div class="flex justify-center space-x-8">
                     <div class="flex flex-col items-center">
                         <button id="light-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
-                            <img src="icons/App Icon iOS.png" alt="Light Mode Icon" class="w-full h-full object-cover rounded-2xl">
+                            <img src="icons/App Icon iOS.png" alt="Light Mode Icon" class="w-full h-full object-fill object-center rounded-2xl">
                         </button>
                         <span class="mt-4 text-lg font-semibold text-gray-700">Light Mode</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <button id="dark-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
-                            <img src="icons/App Icon iOS dark.png" alt="Dark Mode Icon" class="w-full h-full object-cover rounded-2xl">
+                            <img src="icons/App Icon iOS dark.png" alt="Dark Mode Icon" class="w-full h-full object-fill object-center rounded-2xl">
                         </button>
                         <span class="mt-4 text-lg font-semibold text-gray-700">Dark Mode</span>
                     </div>
@@ -533,7 +533,8 @@
             #light-mode-btn img, #dark-mode-btn img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: fill !important; /* Changed from cover to fill */
+                object-fit: fill !important;
+                object-position: center !important;
                 border-radius: 1.5rem !important;
                 margin: 0 !important;
                 padding: 0 !important;
