@@ -271,19 +271,56 @@ function handleNavClick(link) {
 
 function setupNavListeners() {
     const navMenu = document.getElementById('nav-menu');
-    if (!navMenu) {
+    const logoLink = document.getElementById('header-logo-link');
+
+    if (navMenu) {
+        navMenu.addEventListener('click', (e) => {
+            const link = e.target.closest('.nav-link');
+            if (link) {
+                e.preventDefault();
+                console.log(`Nav link clicked: ${link.textContent}`);
+                handleNavClick(link);
+            }
+        });
+    } else {
         console.warn('Nav menu not found');
-        return;
     }
 
-    navMenu.addEventListener('click', (e) => {
-        const link = e.target.closest('.nav-link');
-        if (link) {
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log(`Nav link clicked: ${link.textContent}`);
-            handleNavClick(link);
-        }
-    });
+            const navLinks = document.querySelectorAll('.nav-link');
+            const highlightRectangle = document.getElementById('highlight-rectangle');
+            const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+            const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
+            const newPage = 'index.html';
+
+            if (newPage === currentPage) {
+                console.log('Already on homepage');
+                return;
+            }
+
+            navLinks.forEach(l => l.classList.remove('active'));
+            const homeLink = Array.from(navLinks).find(l => l.getAttribute('href').toLowerCase() === 'index.html');
+            if (homeLink) {
+                homeLink.classList.add('active');
+                if (highlightRectangle) {
+                    const endPos = calculateRectanglePosition(homeLink);
+                    console.log(`Triggering logo transition to ${endPos}px for homepage`);
+                    highlightRectangle.style.left = `${endPos}px`;
+                    sessionStorage.setItem('highlightRectanglePos', endPos);
+                    sessionStorage.setItem('targetPage', newPage);
+                }
+            }
+
+            setTimeout(() => {
+                console.log('Navigating to homepage after 150ms delay');
+                window.location.href = newPage;
+            }, 150);
+        });
+    } else {
+        console.warn('Logo link not found');
+    }
 }
 
 function toggleMobileMenu() {
@@ -379,7 +416,6 @@ function setupMobileMenu() {
     }
 
     setMobileActiveNavLink();
-    // Remove popstate listener to prevent menu reset on navigation
 }
 
 document.addEventListener('DOMContentLoaded', () => {
