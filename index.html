@@ -14,7 +14,7 @@
 
     <section class="hero-gradient flex items-center justify-center px-6 py-6 relative overflow-hidden" id="home">
         <!-- Centered content -->
-        <div class=" FOODmax-w-lg z-10 flex flex-col items-center text-center">
+        <div class="max-w-lg z-10 flex flex-col items-center text-center">
             <img src="icons/App Icon iOS.png" width="120" class="rounded-3xl shadow-2xl mb-6 animate-fade-in hero-logo">
             <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight animate-fade-in"></h1>
             <p id="hero-subtitle" class="text-md md:text-lg text-gray-700 mb-6 max-w-md animate-fade-in-delay"></p>
@@ -461,13 +461,14 @@
         }
         @media (max-width: 768px) {
             .feature-image {
-                width: 100vw;
-                margin-left: calc(-50vw + 50%);
-                margin-right: calc(-50vw + 50%);
-                transform: scale(1.0);
-                max-width: none;
-                height: auto;
-                object-fit: contain;
+                width: 100vw !important;
+                margin-left: calc(-50vw + 50%) !important;
+                margin-right: calc(-50vw + 50%) !important;
+                transform: scale(1.0) !important;
+                max-width: none !important;
+                height: auto !important;
+                object-fit: contain !important;
+                border-radius: 0.75rem;
             }
             #ui-preview-mobile {
                 display: block;
