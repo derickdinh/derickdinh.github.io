@@ -222,7 +222,6 @@ function setActiveNavLink() {
     }
 
     const endPos = calculateRectanglePosition(activeLink);
-    // Check for stored position from previous navigation
     const storedPos = sessionStorage.getItem('highlightRectanglePos');
     if (storedPos && currentPage === sessionStorage.getItem('targetPage')) {
         console.log(`Restoring stored position: ${storedPos}px for page: ${currentPage}`);
@@ -256,13 +255,12 @@ function handleNavClick(link) {
         const endPos = calculateRectanglePosition(link);
         console.log(`Triggering transition to ${endPos}px for page: ${newPage}`);
         highlightRectangle.style.left = `${endPos}px`;
-        // Store the position and target page for the new page
         sessionStorage.setItem('highlightRectanglePos', endPos);
         sessionStorage.setItem('targetPage', newPage);
         setTimeout(() => {
             console.log(`Navigating to: ${newPage} after 150ms delay`);
             window.location.href = newPage;
-        }, 150); // Delay for animation
+        }, 150);
     } else {
         console.log(`Navigating to: ${newPage} (no rectangle found)`);
         window.location.href = newPage;
@@ -369,7 +367,6 @@ function setupMobileMenu() {
 
     console.log('Setting up mobile menu listeners');
 
-    // Clear any existing listeners to prevent duplicates
     mobileMenuBtn.replaceWith(mobileMenuBtn.cloneNode(true));
     const newMobileMenuBtn = document.getElementById('mobile-menu-btn');
 
