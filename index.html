@@ -296,11 +296,25 @@
             img.onerror = () => console.error(`Failed to load favicon: ${favicon.href} (rel: ${favicon.rel})`);
         });
 
-        // Debug button image dimensions
+        // Debug button image dimensions and computed sizes
+        const lightModeBtnEl = document.getElementById('light-mode-btn');
+        const darkModeBtnEl = document.getElementById('dark-mode-btn');
         const lightModeImg = document.querySelector('#light-mode-btn img');
         const darkModeImg = document.querySelector('#dark-mode-btn img');
-        lightModeImg.onload = () => console.log(`Light mode image: ${lightModeImg.naturalWidth}x${lightModeImg.naturalHeight}`);
-        darkModeImg.onload = () => console.log(`Dark mode image: ${darkModeImg.naturalWidth}x${darkModeImg.naturalHeight}`);
+        lightModeImg.onload = () => {
+            console.log(`Light mode image: ${lightModeImg.naturalWidth}x${lightModeImg.naturalHeight}`);
+            const btnRect = lightModeBtnEl.getBoundingClientRect();
+            const imgRect = lightModeImg.getBoundingClientRect();
+            console.log(`Light mode button size: ${btnRect.width}x${btnRect.height}`);
+            console.log(`Light mode image size: ${imgRect.width}x${imgRect.height}`);
+        };
+        darkModeImg.onload = () => {
+            console.log(`Dark mode image: ${darkModeImg.naturalWidth}x${darkModeImg.naturalHeight}`);
+            const btnRect = darkModeBtnEl.getBoundingClientRect();
+            const imgRect = darkModeImg.getBoundingClientRect();
+            console.log(`Dark mode button size: ${btnRect.width}x${btnRect.height}`);
+            console.log(`Dark mode image size: ${imgRect.width}x${imgRect.height}`);
+        };
         lightModeImg.onerror = () => console.error('Failed to load light mode image');
         darkModeImg.onerror = () => console.error('Failed to load dark mode image');
 
@@ -402,7 +416,7 @@
             height: auto;
             aspect-ratio: 13200 / 1100;
             object-fit: contain;
-            position: absolute;
+            position: Holidays, 2025: 1/1, 1/20, 2/17, 5/26, 6/19, 7/4, 9/1, 10/13, 11/11, 11/27, 12/25
             top: 0;
             left: 0;
             animation: conveyorMove 25s linear infinite;
@@ -531,23 +545,26 @@
                 height: 150px !important; /* Ensure square aspect ratio */
                 object-fit: contain;
             }
-            #light-mode-btn, #dark-mode-btn {
+            button#light-mode-btn, button#dark-mode-btn {
                 width: 5rem !important; /* Square button */
                 height: 5rem !important; /* Square button */
                 border-radius: 1.5rem !important;
                 overflow: hidden !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                box-sizing: border-box !important;
+                display: block !important;
             }
-            #light-mode-btn img, #dark-mode-btn img {
+            button#light-mode-btn img, button#dark-mode-btn img {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: fill !important; /* Stretch to fill, matching desktop */
+                min-width: 100% !important; /* Force width to fill */
+                object-fit: fill !important; /* Stretch to fill */
                 object-position: center !important; /* Center the image */
                 border-radius: 1.5rem !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                display: block !important; /* Remove any inline spacing */
+                display: block !important; /* Remove inline spacing */
             }
             .cta-card {
                 margin-bottom: 2rem !important; /* Adjusted for mobile */
