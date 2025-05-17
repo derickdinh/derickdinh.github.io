@@ -9,234 +9,237 @@
     <!-- Favicon Setup -->
     <link rel="icon" href="icons/rounded.logo.png">
 </head>
-<body class="font-sans text-gray-900 bg-white">
-    <div include-html="header.html"></div>
+<body class="font-sans text-gray-900 bg-white flex flex-col min-h-screen">
+    <div class="flex-1">
+        <div include-html="header.html"></div>
 
-    <section class="hero-gradient flex items-center justify-center px-6 py-6 relative overflow-hidden" id="home">
-        <!-- Centered content -->
-        <div class="max-w-lg z-10 flex flex-col items-center text-center">
-            <img src="icons/App Icon iOS.png" width="120" class="rounded-3xl shadow-2xl mb-6 animate-fade-in hero-logo">
-            <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight animate-fade-in"></h1>
-            <p id="hero-subtitle" class="text-md md:text-lg text-gray-700 mb-6 max-w-md animate-fade-in-delay"></p>
-            <form id="waitlist-form" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full max-w-md animate-fade-in-delay-2">
-                <input type="email" name="entry.947046257" placeholder="Enter your email for launch updates" class="p-3 rounded-3xl border border-gray-300 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
-                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-3xl hover:bg-blue-700 font-semibold text-md shadow-lg">Join the Waitlist</button>
-            </form>
-            <div id="form-response" class="hidden mt-4 text-center">
-                <p class="text-green-600 text-lg">Thanks for joining the Elevate waitlist! Stay tuned for updates.</p>
+        <section class="hero-gradient flex items-center justify-center px-6 py-6 relative overflow-hidden" id="home">
+            <!-- Centered content -->
+            <div class="max-w-lg z-10 flex flex-col items-center text-center">
+                <img src="icons/App Icon iOS.png" width="120" class="rounded-3xl shadow-2xl mb-6 animate-fade-in hero-logo">
+                <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight animate-fade-in"></h1>
+                <p id="hero-subtitle" class="text-md md:text-lg text-gray-700 mb-6 max-w-md animate-fade-in-delay"></p>
+                <form id="waitlist-form" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full max-w-md animate-fade-in-delay-2">
+                    <input type="email" name="entry.947046257" placeholder="Enter your email for launch updates" class="p-3 rounded-3xl border border-gray-300 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-3xl hover:bg-blue-700 font-semibold text-md shadow-lg">Join the Waitlist</button>
+                </form>
+                <div id="form-response" class="hidden mt-4 text-center">
+                    <p class="text-green-600 text-lg">Thanks for joining the Elevate waitlist! Stay tuned for updates.</p>
+                </div>
+                <p class="text-gray-600 text-sm mt-4">We respect your privacy and won’t share your email.</p>
+                <div id="hero-integrations" class="flex space-x-4 mt-4 text-gray-500 text-xs font-medium animate-fade-in-delay-2"></div>
             </div>
-            <p class="text-gray-600 text-sm mt-4">We respect your privacy and won’t share your email.</p>
-            <div id="hero-integrations" class="flex space-x-4 mt-4 text-gray-500 text-xs font-medium animate-fade-in-delay-2"></div>
-        </div>
 
-        <!-- Top-left image -->
-        <img src="icons/log-hero.png" class="hidden md:block absolute -top-6 left-10 w-72 transform rotate-12 origin-top-left clip-path-polygon(0 0, 100% 0, 80% 100%, 0 100%) opacity-100 z-0">
+            <!-- Top-left image -->
+            <img src="icons/log-hero.png" class="hidden md:block absolute -top-6 left-10 w-72 transform rotate-12 origin-top-left clip-path-polygon(0 0, 100% 0, 80% 100%, 0 100%) opacity-100 z-0">
 
-        <!-- Top-right image -->
-        <img src="icons/nutrition-hero.png" class="hidden md:block absolute top-20 -right-10 w-80 transform rotate-6 origin-top-right clip-path-polygon(0 0, 100% 20%, 100% 100%, 0 100%) opacity-100 z-0">
+            <!-- Top-right image -->
+            <img src="icons/nutrition-hero.png" class="hidden md:block absolute top-20 -right-10 w-80 transform rotate-6 origin-top-right clip-path-polygon(0 0, 100% 20%, 100% 100%, 0 100%) opacity-100 z-0">
 
-        <!-- Bottom-left image -->
-        <img src="icons/social-hero.png" class="hidden md:block absolute bottom-0 left-24 w-64 transform -rotate-12 origin-bottom-left clip-path-polygon(0 0, 100% 0, 100% 80%, 0 100%) opacity-100 z-0">
+            <!-- Bottom-left image -->
+            <img src="icons/social-hero.png" class="hidden md:block absolute bottom-0 left-24 w-64 transform -rotate-12 origin-bottom-left clip-path-polygon(0 0, 100% 0, 100% 80%, 0 100%) opacity-100 z-0">
 
-        <!-- Bottom-right image -->
-        <img src="icons/track-hero.png" class="hidden md:block absolute bottom-2 right-20 w-72 transform rotate-6 origin-bottom-right clip-path-polygon(0 0, 100% 0, 20% 100%, 0 100%) opacity-100 z-0">
-    </section>
+            <!-- Bottom-right image -->
+            <img src="icons/track-hero.png" class="hidden md:block absolute bottom-2 right-20 w-72 transform rotate-6 origin-bottom-right clip-path-polygon(0 0, 100% 0, 20% 100%, 0 100%) opacity-100 z-0">
+        </section>
 
-    <!-- Reliability & Reviews Section -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">Built with Passion. Trusted by Early Adopters.</h2>
-            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">We’re currently in beta — and the feedback from our testers has been phenomenal. Here’s what a few of them have to say about Elevate.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
-                    <p class="text-gray-700 italic mb-4">"What I love about Elevate is how easy it makes tracking everything in one place — from my protein intake to how much weight I lifted last week. It’s already helped me spot patterns and improve my consistency."</p>
-                    <div class="flex items-center justify-center">
-                        <div>
-                            <p class="text-gray-900 font-semibold">Aurélie K.</p>
-                            <p class="text-gray-500 text-sm">Beta Tester - Tennis Athlete</p>
+        <!-- Reliability & Reviews Section -->
+        <section class="py-16 px-6 bg-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Built with Passion. Trusted by Early Adopters.</h2>
+                <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">We’re currently in beta — and the feedback from our testers has been phenomenal. Here’s what a few of them have to say about Elevate.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
+                        <p class="text-gray-700 italic mb-4">"What I love about Elevate is how easy it makes tracking everything in one place — from my protein intake to how much weight I lifted last week. It’s already helped me spot patterns and improve my consistency."</p>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <p class="text-gray-900 font-semibold">Aurélie K.</p>
+                                <p class="text-gray-500 text-sm">Beta Tester - Tennis Athlete</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
+                        <p class="text-gray-700 italic mb-4">"I’ve used tons of fitness apps, but Elevate is the first that feels like it’s built for people who actually train seriously. The live activity tracking during my workouts is a game-changer — no more switching apps mid-set."</p>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <p class="text-gray-900 font-semibold">Benson P.</p>
+                                <p class="text-gray-500 text-sm">Beta Tester - Fitness Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-600 text-white p-6 rounded-xl shadow-lg">
+                        <p class="text-2xl font-bold">Active Users Worldwide</p>
+                        <p class="text-lg font-bold mb-2">______</p>
+                        <p class="text-sm mt-4">Currently in private beta with an amazing group of testers. Join early and help shape the future of fitness tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced UI Preview Section -->
+        <section class="py-16 px-6 bg-gray-100">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12">Explore the Interface</h2>
+                <div class="flex justify-center mb-12">
+                    <img id="ui-preview" src="icons/light-mode.png" alt="Light Mode UI" class="rounded-xl w-full max-w-5xl h-[32rem] object-cover md:block hidden">
+                    <img id="ui-preview-mobile" src="icons/light-mode.png" alt="Light Mode UI" class="rounded-xl w-full object-contain md:hidden block">
+                </div>
+                <div class="flex justify-center space-x-8">
+                    <div class="flex flex-col items-center">
+                        <button id="light-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
+                            <img src="icons/App Icon iOS.png" alt="Light Mode Icon" class="w-full h-full object-cover rounded-2xl">
+                        </button>
+                        <span class="mt-4 text-lg font-semibold text-gray-700">Light Mode</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <button id="dark-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
+                            <img src="icons/App Icon iOS dark.png" alt="Dark Mode Icon" class="w-full h-full object-cover rounded-2xl">
+                        </button>
+                        <span class="mt-4 text-lg font-semibold text-gray-700">Dark Mode</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Sections -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <!-- Feature 1: Personalized Plans -->
+                <div class="flex flex-col md:flex-row items-center mb-20 animate-slide-in-left">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-32">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Workouts</h3>
+                        <p class="text-lg text-gray-600">Stay consistent, break through plateaus, and set new personal records with Elevate’s advanced workout tracking system.</p>
+                        <ul class="mt-4 list-disc text-gray-600 pl-8">
+                            <li>Effortless Tracking & Logging</li>
+                            <li>Progress & Performance Insights</li>
+                            <li>AI-Powered Personalization</li>
+                            <li>Explore Endless Workout Variety</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="icons/workout-feature.png" alt="Personalized Plans" class="rounded-xl w-full feature-image">
+                    </div>
+                </div>
+
+                <!-- Feature 2: Powerful Tracking -->
+                <div class="flex flex-col md:flex-row-reverse items-center mb-20 animate-slide-in-right">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pl-32">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Nutrition</h3>
+                        <p class="text-lg text-gray-600">Log meals, track nutrients, and discover personalized recipes with Elevate’s intelligent nutrition system.</p>
+                        <ul class="mt-4 list-disc text-gray-600 pl-8">
+                            <li>Effortless Meal Logging</li>
+                            <li>AI-Powered Recipes</li>
+                            <li>Nutrition Insights</li>
+                            <li>Ultimate Food & Recipe Library</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="icons/nutrition-feature.png" alt="Tracking Tools" class="rounded-xl w-full feature-image">
+                    </div>
+                </div>
+
+                <!-- Feature 3: Community Support -->
+                <div class="flex flex-col md:flex-row items-center mb-20 animate-slide-in-left">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-32">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Social</h3>
+                        <p class="text-lg text-gray-600">Follow friends, share wins, and discover new routines together—Elevate turns fitness into a community experience.</p>
+                        <ul class="mt-4 list-disc text-gray-600 pl-8">
+                            <li>Follow Friends</li>
+                            <li>Compete with Friends</li>
+                            <li>Community Content</li>
+                            <li>Share Achievements</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="icons/social-feature.png" alt="Community Support" class="rounded-xl w-full feature-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conveyor Belt Section -->
+        <section class="py-20 px-6 bg-gray-50">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-5xl font-bold text-gray-900 mb-4">Elevate Conveyor Belt</h2>
+                <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Experience the seamless flow of your fitness journey with our dynamic conveyor belt, showcasing the essence of Elevate.</p>
+                
+                <!-- Conveyor Belt Image -->
+                <div class="conveyor-wrapper">
+                    <div class="conveyor-container">
+                        <img src="icons/conveyor-belt.png" alt="Conveyor Belt" class="conveyor-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrated in Your Ecosystem Section -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="pt-20">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Integrated in Your Ecosystem</h2>
+                    <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Seamlessly connect Elevate with your favorite devices and apps, enhancing your fitness experience across notifications, live activities, lock screen widgets, and dynamic island features.</p>
+                </div>
+                <div class="flex flex-wrap justify-center" style="gap: 2rem 2rem;">
+                    <!-- Notifications -->
+                    <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
+                        <div class="ecosystem-card-image">
+                            <img src="icons/notifications.png" alt="Notifications" class="rounded-xl">
+                        </div>
+                        <div class="ecosystem-card-text">
+                            <h3 class="text-lg font-semibold text-gray-900">Notifications</h3>
+                            <p class="text-sm text-gray-600 mt-2">Stay informed and on track with real-time alerts tailored to your fitness goals — from reminders to hit your macros to motivational workout nudges, we’ve got your back.</p>
+                        </div>
+                    </div>
+                    <!-- Live Activities -->
+                    <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
+                        <div class="ecosystem-card-image">
+                            <img src="icons/live.png" alt="Live Activities" class="rounded-xl">
+                        </div>
+                        <div class="ecosystem-card-text">
+                            <h3 class="text-lg font-semibold text-gray-900">Live Activities</h3>
+                            <p class="text-sm text-gray-600 mt-2">Monitor your workouts in real time directly from your lock screen. See your sets, reps, rest time, and progress without ever opening the app.</p>
+                        </div>
+                    </div>
+                    <!-- Lock Screen Widgets -->
+                    <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
+                        <div class="ecosystem-card-image">
+                            <img src="icons/lock-screen.png" alt="Lock Screen Widgets" class="rounded-xl">
+                        </div>
+                        <div class="ecosystem-card-text">
+                            <h3 class="text-lg font-semibold text-gray-900">Lock Screen Widgets</h3>
+                            <p class="text-sm text-gray-600 mt-2">Access your key fitness stats at a glance — including calories, macros, and workout plans — right from your lock screen, without unlocking your phone.</p>
+                        </div>
+                    </div>
+                    <!-- Dynamic Island -->
+                    <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
+                        <div class="ecosystem-card-image">
+                            <video class="rounded-xl" autoplay loop muted playsinline>
+                                <source src="videos/dynamic-island.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="ecosystem-card-text">
+                            <h3 class="text-lg font-semibold text-gray-900">Dynamic Island</h3>
+                            <p class="text-sm text-gray-600 mt-2">Track your ongoing workout effortlessly with Dynamic Island support. See your active set, remaining rest time, and progress in a glance — all while using other apps.</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg">
-                    <p class="text-gray-700 italic mb-4">"I’ve used tons of fitness apps, but Elevate is the first that feels like it’s built for people who actually train seriously. The live activity tracking during my workouts is a game-changer — no more switching apps mid-set."</p>
-                    <div class="flex items-center justify-center">
-                        <div>
-                            <p class="text-gray-900 font-semibold">Benson P.</p>
-                            <p class="text-gray-500 text-sm">Beta Tester - Fitness Enthusiast</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-blue-600 text-white p-6 rounded-xl shadow-lg">
-                    <p class="text-2xl font-bold">Active Users Worldwide</p>
-                    <p class="text-lg font-bold mb-2">______</p>
-                    <p class="text-sm mt-4">Currently in private beta with an amazing group of testers. Join early and help shape the future of fitness tracking.</p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Enhanced UI Preview Section -->
-    <section class="py-16 px-6 bg-gray-100">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-12">Explore the Interface</h2>
-            <div class="flex justify-center mb-12">
-                <img id="ui-preview" src="icons/light-mode.png" alt="Light Mode UI" class="rounded-xl w-full max-w-5xl h-[32rem] object-cover md:block hidden">
-                <img id="ui-preview-mobile" src="icons/light-mode.png" alt="Light Mode UI" class="rounded-xl w-full object-contain md:hidden block">
-            </div>
-            <div class="flex justify-center space-x-8">
-                <div class="flex flex-col items-center">
-                    <button id="light-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
-                        <img src="icons/App Icon iOS.png" alt="Light Mode Icon" class="w-full h-full object-cover rounded-2xl">
-                    </button>
-                    <span class="mt-4 text-lg font-semibold text-gray-700">Light Mode</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <button id="dark-mode-btn" class="w-24 h-24 rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
-                        <img src="icons/App Icon iOS dark.png" alt="Dark Mode Icon" class="w-full h-full object-cover rounded-2xl">
-                    </button>
-                    <span class="mt-4 text-lg font-semibold text-gray-700">Dark Mode</span>
+        <!-- Contact Us Section -->
+        <section class="pt-20 pb-10 px-6 bg-white">
+            <div class="cta-card mx-auto max-w-6xl mb-12 md:mb-12">
+                <span class="label">GET IN TOUCH</span>
+                <h2 id="cta-title" class="text-2xl md:text-4xl font-extrabold text-white mb-6">Have Questions? Reach Out!</h2>
+                <p id="cta-subtitle" class="text-md md:text-xl text-gray-200 mb-10 max-w-2xl">Contact our team for inquiries about Elevate, beta testing, or partnership opportunities.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:hello@elevatetracking.com" class="btn btn-primary bg-blue-600 text-white px-8 py-4 rounded-3xl hover:bg-blue-700 font-semibold">Send Us an Email</a>
+                    <a href="support.html" class="btn btn-secondary bg-transparent text-white border border-white px-8 py-4 rounded-3xl hover:bg-blue-700 font-semibold">Learn More <span>→</span></a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Feature Sections -->
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <!-- Feature 1: Personalized Plans -->
-            <div class="flex flex-col md:flex-row items-center mb-20 animate-slide-in-left">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-32">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Workouts</h3>
-                    <p class="text-lg text-gray-600">Stay consistent, break through plateaus, and set new personal records with Elevate’s advanced workout tracking system.</p>
-                    <ul class="mt-4 list-disc text-gray-600 pl-8">
-                        <li>Effortless Tracking & Logging</li>
-                        <li>Progress & Performance Insights</li>
-                        <li>AI-Powered Personalization</li>
-                        <li>Explore Endless Workout Variety</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="icons/workout-feature.png" alt="Personalized Plans" class="rounded-xl w-full feature-image">
-                </div>
-            </div>
-
-            <!-- Feature 2: Powerful Tracking -->
-            <div class="flex flex-col md:flex-row-reverse items-center mb-20 animate-slide-in-right">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pl-32">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Nutrition</h3>
-                    <p class="text-lg text-gray-600">Log meals, track nutrients, and discover personalized recipes with Elevate’s intelligent nutrition system.</p>
-                    <ul class="mt-4 list-disc text-gray-600 pl-8">
-                        <li>Effortless Meal Logging</li>
-                        <li>AI-Powered Recipes</li>
-                        <li>Nutrition Insights</li>
-                        <li>Ultimate Food & Recipe Library</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="icons/nutrition-feature.png" alt="Tracking Tools" class="rounded-xl w-full feature-image">
-                </div>
-            </div>
-
-            <!-- Feature 3: Community Support -->
-            <div class="flex flex-col md:flex-row items-center mb-20 animate-slide-in-left">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-32">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Social</h3>
-                    <p class="text-lg text-gray-600">Follow friends, share wins, and discover new routines together—Elevate turns fitness into a community experience.</p>
-                    <ul class="mt-4 list-disc text-gray-600 pl-8">
-                        <li>Follow Friends</li>
-                        <li>Compete with Friends</li>
-                        <li>Community Content</li>
-                        <li>Share Achievements</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="icons/social-feature.png" alt="Community Support" class="rounded-xl w-full feature-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Conveyor Belt Section -->
-    <section class="py-20 px-6 bg-gray-50">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-5xl font-bold text-gray-900 mb-4">Elevate Conveyor Belt</h2>
-            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Experience the seamless flow of your fitness journey with our dynamic conveyor belt, showcasing the essence of Elevate.</p>
-            
-            <!-- Conveyor Belt Image -->
-            <div class="conveyor-wrapper">
-                <div class="conveyor-container">
-                    <img src="icons/conveyor-belt.png" alt="Conveyor Belt" class="conveyor-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Integrated in Your Ecosystem Section -->
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="pt-20">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Integrated in Your Ecosystem</h2>
-                <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Seamlessly connect Elevate with your favorite devices and apps, enhancing your fitness experience across notifications, live activities, lock screen widgets, and dynamic island features.</p>
-            </div>
-            <div class="flex flex-wrap justify-center" style="gap: 2rem 2rem;">
-                <!-- Notifications -->
-                <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
-                    <div class="ecosystem-card-image">
-                        <img src="icons/notifications.png" alt="Notifications" class="rounded-xl">
-                    </div>
-                    <div class="ecosystem-card-text">
-                        <h3 class="text-lg font-semibold text-gray-900">Notifications</h3>
-                        <p class="text-sm text-gray-600 mt-2">Stay informed and on track with real-time alerts tailored to your fitness goals — from reminders to hit your macros to motivational workout nudges, we’ve got your back.</p>
-                    </div>
-                </div>
-                <!-- Live Activities -->
-                <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
-                    <div class="ecosystem-card-image">
-                        <img src="icons/live.png" alt="Live Activities" class="rounded-xl">
-                    </div>
-                    <div class="ecosystem-card-text">
-                        <h3 class="text-lg font-semibold text-gray-900">Live Activities</h3>
-                        <p class="text-sm text-gray-600 mt-2">Monitor your workouts in real time directly from your lock screen. See your sets, reps, rest time, and progress without ever opening the app.</p>
-                    </div>
-                </div>
-                <!-- Lock Screen Widgets -->
-                <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
-                    <div class="ecosystem-card-image">
-                        <img src="icons/lock-screen.png" alt="Lock Screen Widgets" class="rounded-xl">
-                    </div>
-                    <div class="ecosystem-card-text">
-                        <h3 class="text-lg font-semibold text-gray-900">Lock Screen Widgets</h3>
-                        <p class="text-sm text-gray-600 mt-2">Access your key fitness stats at a glance — including calories, macros, and workout plans — right from your lock screen, without unlocking your phone.</p>
-                    </div>
-                </div>
-                <!-- Dynamic Island -->
-                <div class="ecosystem-card p-6 flex flex-col" style="width: 500px; height: 650px; box-sizing: border-box; position: relative;">
-                    <div class="ecosystem-card-image">
-                        <video class="rounded-xl" autoplay loop muted playsinline>
-                            <source src="videos/dynamic-island.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="ecosystem-card-text">
-                        <h3 class="text-lg font-semibold text-gray-900">Dynamic Island</h3>
-                        <p class="text-sm text-gray-600 mt-2">Track your ongoing workout effortlessly with Dynamic Island support. See your active set, remaining rest time, and progress in a glance — all while using other apps.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section class="py-20 px-6 bg-white">
-        <div class="cta-card mx-auto max-w-6xl">
-            <span class="label">GET IN TOUCH</span>
-            <h2 id="cta-title" class="text-2xl md:text-4xl font-extrabold text-white mb-6">Have Questions? Reach Out!</h2>
-            <p id="cta-subtitle" class="text-md md:text-xl text-gray-200 mb-10 max-w-2xl">Contact our team for inquiries about Elevate, beta testing, or partnership opportunities.</p>
-            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                <a href="mailto:hello@elevatetracking.com" class="btn btn-primary bg-blue-600 text-white px-8 py-4 rounded-3xl hover:bg-blue-700 font-semibold">Send Us an Email</a>
-                <a href="support.html" class="btn btn-secondary bg-transparent text-white border border-white px-8 py-4 rounded-3xl hover:bg-blue-700 font-semibold">Learn More <span>→</span></a>
-            </div>
-        </div>
+        </section>
     </div>
+
     <div include-html="footer.html"></div>
 
     <script src="scripts.js"></script>
@@ -535,6 +538,9 @@
                 margin: 0 !important;
                 padding: 0 !important;
             }
+            .cta-card {
+                margin-bottom: 2rem !important; /* Adjusted for mobile */
+            }
         }
         @media (min-width: 769px) {
             #ui-preview {
@@ -570,6 +576,10 @@
         /* Custom clip-path for slanted, cut-off effect */
         .clip-path-polygon {
             clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+        }
+        footer {
+            flex-shrink: 0;
+            width: 100%;
         }
     </style>
 </body>
