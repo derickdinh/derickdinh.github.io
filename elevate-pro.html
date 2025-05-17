@@ -292,22 +292,6 @@
 
     <script src="scripts.js"></script>
     <script>
-        async function loadIncludes() {
-            const elements = document.querySelectorAll('[include-html]');
-            for (const elem of elements) {
-                const file = elem.getAttribute('include-html');
-                try {
-                    const response = await fetch(file);
-                    if (!response.ok) throw new Error(`Failed to load ${file}`);
-                    const html = await response.text();
-                    elem.outerHTML = html;
-                } catch (error) {
-                    console.error(error);
-                    elem.innerHTML = `<p>Error loading ${file}</p>`;
-                }
-            }
-        }
-
         // Popup functions
         function showPopup() {
             document.getElementById('proPopup').classList.remove('hidden');
@@ -321,30 +305,6 @@
         function scrollToComparison() {
             document.getElementById('comparison-section').scrollIntoView({ behavior: 'smooth' });
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadIncludes().then(() => {
-                if (typeof populateProSteps === 'function') populateProSteps();
-                if (typeof populateFooter === 'function') populateFooter();
-                if (typeof setActiveNavLink === 'function') setActiveNavLink();
-                if (typeof setMobileActiveNavLink === 'function') setMobileActiveNavLink();
-
-                // Mobile menu toggle
-                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenuBtn && mobileMenu) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        if (typeof toggleMobileMenu === 'function') {
-                            toggleMobileMenu();
-                        } else {
-                            console.error('toggleMobileMenu function is not defined');
-                        }
-                    });
-                } else {
-                    console.error('Mobile menu button or menu not found');
-                }
-            });
-        });
     </script>
 
     <!-- Custom Animations and Styles -->
