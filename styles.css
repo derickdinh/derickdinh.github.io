@@ -56,6 +56,7 @@
     margin-top: auto; 
     margin-left: auto; 
     margin-right: auto; 
+    image-rendering: auto; /* Added to preserve original resolution */
 }
 
 /* Default feature-showcase for Workouts */
@@ -106,6 +107,7 @@
 /* Add this new rule for feature-block-4 image in the Workouts section */
 .feature-showcase .feature-block-4 img {
     transform: translateY(32px);
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase .feature-block-5 { 
@@ -121,16 +123,19 @@
 .feature-showcase .feature-block-1 img {
     width: 85%; 
     max-height: 100%; 
+    image-rendering: auto; /* Added */
 }
 
 /* Specific adjustments for feature-block-2 (Generate Workouts Using Our AI) */
 .feature-showcase .feature-block-2 img {
     transform: translateY(32px);
+    image-rendering: auto; /* Added */
 }
 
 /* Specific adjustments for feature-block-3 (Track your Progress) */
 .feature-showcase .feature-block-3 img {
     filter: brightness(100%);
+    image-rendering: auto; /* Added */
 }
 
 /* Specific adjustments for feature-block-5 (The Ultimate Exercise Library) */
@@ -145,6 +150,7 @@
     bottom: 0px; 
     left: 50%; 
     transform: translateX(-50%); 
+    image-rendering: auto; /* Added */
 }
 
 /* Nutrition section styles */
@@ -169,6 +175,7 @@
     width: 120%;
     max-height: 95%;
     transform: translateY(32px);
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-nutrition .feature-block-2 {
@@ -180,6 +187,7 @@
 .feature-showcase-nutrition .feature-block-2 img {
     max-height: 80%;
     transform: translateY(32px);
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-nutrition .feature-block-3 {
@@ -198,6 +206,7 @@
 
 .feature-showcase-nutrition .feature-block-4 img {
     transform: translateY(32px);
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-nutrition .feature-block-5 {
@@ -208,6 +217,7 @@
 }
 .feature-showcase-nutrition .feature-block-5 img {
     transform: translateY(6px);
+    image-rendering: auto; /* Added */
 }
 
 /* Feature-showcase-social for Social section */
@@ -260,6 +270,7 @@
     margin: 0;
     object-fit: contain;
     border-radius: 0.75rem;
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-social .feature-block-2 { 
@@ -294,10 +305,12 @@
     object-fit: contain;
     border-radius: 0.75rem;
     transform: translateY(84px);
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-social .feature-block-3 img { 
     transform: translateY(30px); 
+    image-rendering: auto; /* Added */
 }
 
 .feature-showcase-social .feature-block-3 { 
@@ -362,6 +375,7 @@
     position: relative;
     right: 0;
     transform: translateY(69px);
+    image-rendering: auto; /* Added */
 }
 
 /* Mobile Responsiveness */
@@ -391,6 +405,7 @@
         max-height: 60%; 
         object-fit: contain; 
         margin-top: auto; 
+        image-rendering: auto; /* Added */
     }
 
     /* Workouts Section */
@@ -400,10 +415,12 @@
     .feature-showcase .feature-block-1 img {
         width: 85%; 
         max-height: 75%; 
+        image-rendering: auto; /* Added */
     }
     .feature-showcase .feature-block-2 img {
         transform: translateY(32px); 
         max-height: 60%;
+        image-rendering: auto; /* Added */
     }
     .feature-showcase .feature-block-5 img {
         width: 110%; 
@@ -411,22 +428,26 @@
         position: static; 
         transform: none; 
         margin: 0 auto;
+        image-rendering: auto; /* Added */
     }
 
     /* Nutrition Section */
     .feature-showcase-nutrition .feature-block-1 img {
         width: 120%; 
         max-height: 60%;
+        image-rendering: auto; /* Added */
     }
     .feature-showcase-nutrition .feature-block-2 img {
         width: 100%; 
         max-height: 60%;
         transform: translateY(32px); 
+        image-rendering: auto; /* Added */
     }
     .feature-showcase-nutrition .feature-block-5 img {
         width: 100%; 
         max-height: 60%;
         transform: translateY(6px); 
+        image-rendering: auto; /* Added */
     }
 
     /* Social Section */
@@ -470,6 +491,7 @@
         margin: 0 auto; 
         transform: none; 
         position: static; 
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-social .feature-block-1 {
@@ -480,6 +502,7 @@
         width: 90%; 
         max-height: 55%; 
         object-fit: contain; 
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-social .feature-block-2 .text-container {
@@ -489,12 +512,14 @@
     .feature-showcase-social .feature-block-2 img {
         width: 90%;
         max-height: 55%;
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-social .feature-block-3 img {
         width: 90%; 
         max-height: 55%; 
         object-fit: contain; 
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-social .feature-block-4 {
@@ -517,13 +542,14 @@
     .feature-showcase-social .feature-block-4 img {
         width: 90%;
         max-height: 55%;
+        image-rendering: auto; /* Added */
     }
 }
 
 .feature-showcase-nutrition .feature-block-1 img,
-.feature-showcase-nutrition .feature-block-4 img { min-height: 101px; }
+.feature-showcase-nutrition .feature-block-4 img { min-height: 101px; image-rendering: auto; /* Added */ }
 .feature-showcase-nutrition .feature-block-2 img,
-.feature-showcase-nutrition .feature-block-3 img { min-height: 135px; }
+.feature-showcase-nutrition .feature-block-3 img { min-height: 135px; image-rendering: auto; /* Added */ }
 
 @media (min-width: 1440px) {
     .feature-showcase,
@@ -534,24 +560,28 @@
 
     .feature-block h3 { font-size: clamp(1.25rem, 2vw, 2rem); }
     .feature-block p { font-size: clamp(0.875rem, 1.5vw, 1rem); }
-    .feature-block img { max-height: 85%; }
+    .feature-block img { max-height: 85%; image-rendering: auto; /* Added */ }
 
     .feature-showcase .feature-block-2 img {
         max-height: 70%;
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-nutrition .feature-block-1 img {
         max-height: 95%; 
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase-nutrition .feature-block-2 img {
         max-height: 80%;
+        image-rendering: auto; /* Added */
     }
 
     .feature-showcase .feature-block-5 img {
         width: 115%; 
         max-height: 125%; 
         bottom: 0px; 
+        image-rendering: auto; /* Added */
     }
 }
 
@@ -677,6 +707,7 @@
     width: clamp(20px, 2vw, 30px);
     height: clamp(20px, 2vw, 30px);
     object-fit: contain;
+    image-rendering: auto; /* Added */
 }
 
 .popup-feature span {
@@ -703,6 +734,7 @@
     .popup-image {
         max-height: 40vh;
         width: auto;
+        image-rendering: auto; /* Updated to ensure consistency */
     }
 
     .popup-text-container {
@@ -730,6 +762,7 @@
     .popup-feature-icon {
         width: clamp(16px, 3vw, 20px);
         height: clamp(16px, 3vw, 20px);
+        image-rendering: auto; /* Added */
     }
 
     .popup-close {
@@ -818,12 +851,14 @@
 .checkmark-icon {
     width: 1rem;
     height: 1rem;
+    image-rendering: auto; /* Added */
 }
 
 .circle-icon {
     width: 0.5rem;
     height: 0.5rem;
     opacity: 0.5;
+    image-rendering: auto; /* Added */
 }
 
 /* Ecosystem Integration Section */
@@ -846,6 +881,7 @@
     object-fit: cover;
     border-radius: 0.75rem;
     margin-bottom: 1rem;
+    image-rendering: auto; /* Added */
 }
 
 .ecosystem-card h3 {
@@ -869,6 +905,7 @@
 
     .ecosystem-card img {
         height: 10rem;
+        image-rendering: auto; /* Added */
     }
 
     .ecosystem-card h3 {
@@ -887,6 +924,7 @@
 @media (min-width: 1440px) {
     .ecosystem-card img {
         height: 14rem;
+        image-rendering: auto; /* Added */
     }
 
     .ecosystem-card h3 {
