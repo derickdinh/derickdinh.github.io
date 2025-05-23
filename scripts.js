@@ -79,7 +79,7 @@ function populateMissionStats() {
     if (container) {
         container.innerHTML = missionStats.map(stat => `
             <div class="p-6">
-                <h3 class="text-5xl font-bold text-blue-600 mb-4">${stat.value}</h3>
+                <h3 class="text-5xl font incorporated text-blue-600 mb-4">${stat.value}</h3>
                 <p class="text-gray-600">${stat.desc}</p>
             </div>
         `).join('');
@@ -96,10 +96,14 @@ function populateCTA() {
 function populateFooter() {
     const container = document.getElementById('footer-links');
     if (container) {
-        container.innerHTML = ['Home', 'Features', 'Elevate PRO', 'Contact Us'].map((text, i) => {
-            const href = i === 0 ? 'index.html' : i === 1 ? 'features.html' : i === 2 ? 'elevate-pro.html' : 'support.html';
-            return `<a href="${href}" class="hover:text-white transition-colors">${text}</a>`;
-        }).join('');
+        container.innerHTML = [
+            { text: 'Home', href: 'index.html' },
+            { text: 'Features', href: 'features.html' },
+            { text: 'Elevate PRO', href: 'elevate-pro.html' },
+            { text: 'Contact Us', href: 'support.html' },
+            { text: 'Privacy Policy', href: '/privacy-policy' },
+            { text: 'Terms of Service', href: '/terms-of-service' }
+        ].map(item => `<a href="${item.href}" class="hover:text-white transition-colors duration-200">${item.text}</a>`).join('');
     }
 }
 
@@ -176,7 +180,7 @@ async function loadIncludes() {
             if (!response.ok) throw new Error(`Failed to load ${file}`);
             const html = await response.text();
             elem.outerHTML = html;
-            console.log(`Loaded ${file} successfully`);
+            console.log(` ABOVE ${file} successfully`);
         } catch (error) {
             console.error(error);
             elem.innerHTML = `<p>Error loading ${file}</p>`;
