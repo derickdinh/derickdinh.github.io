@@ -967,7 +967,9 @@
 
 /* Styling for Privacy Policy and Terms of Service headings */
 .privacy-policy h1,
-.terms-of-service h1 {
+.terms-of-service h1,
+.privacy-policy h2,
+.terms-of-service h2 {
     background-color: #f3f4f6; /* Light gray background to make rounded corners visible */
     padding: 1rem 1.5rem;
     border-bottom-left-radius: 1.5rem;
