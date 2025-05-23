@@ -194,9 +194,10 @@ function calculateRectanglePosition(link) {
 
 function setActiveNavLink() {
     const navLinks = document.querySelectorAll('.nav-link');
+    const highlightRectangle = document.getElementById('highlight-rectangle');
 
-    if (!navLinks.length) {
-        console.warn('Navigation elements not found. Links:', navLinks.length);
+    if (!navLinks.length || !highlightRectangle) {
+        console.warn('Navigation elements not found. Links:', navLinks.length, 'Rectangle:', !!highlightRectangle);
         return;
     }
 
@@ -219,10 +220,24 @@ function setActiveNavLink() {
         activeLink = navLinks[0];
         activeLink.classList.add('active');
     }
+
+    const endPos = calculateRectanglePosition(activeLink);
+    const storedPos = sessionStorage.getItem('highlightRectanglePos');
+    if (storedPos && currentPage === sessionStorage.getItem('targetPage')) {
+        console.log(`Restoring stored position: ${storedPos}px for page: ${currentPage}`);
+        highlightRectangle.style.left = `${storedPos}px`;
+        sessionStorage.removeItem('highlightRectanglePos');
+        sessionStorage.removeItem('targetPage');
+    } else {
+        console.log(`Setting highlight rectangle to ${endPos}px for page: ${currentPage} (no stored position)`);
+        highlightRectangle.style.left = `${endPos}px`;
+    }
+    highlightRectangle.style.display = 'block';
 }
 
 function handleNavClick(link) {
     const navLinks = document.querySelectorAll('.nav-link');
+    const highlightRectangle = document.getElementById('highlight-rectangle');
     const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
     let newPage = link.getAttribute('href').toLowerCase().replace(/\/+$/, '');
@@ -236,8 +251,20 @@ function handleNavClick(link) {
     navLinks.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
 
-    console.log(`Navigating to: ${newPage}`);
-    window.location.href = newPage;
+    if (highlightRectangle) {
+        const endPos = calculateRectanglePosition(link);
+        console.log(`Triggering transition to ${endPos}px for page: ${newPage}`);
+        highlightRectangle.style.left = `${endPos}px`;
+        sessionStorage.setItem('highlightRectanglePos', endPos);
+        sessionStorage.setItem('targetPage', newPage);
+        setTimeout(() => {
+            console.log(`Navigating to: ${newPage} after 150ms delay`);
+            window.location.href = newPage;
+        }, 150);
+    } else {
+        console.log(`Navigating to: ${newPage} (no rectangle found)`);
+        window.location.href = newPage;
+    }
 }
 
 function setupNavListeners() {
@@ -261,6 +288,7 @@ function setupNavListeners() {
         logoLink.addEventListener('click', (e) => {
             e.preventDefault();
             const navLinks = document.querySelectorAll('.nav-link');
+            const highlightRectangle = document.getElementById('highlight-rectangle');
             const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
             const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
             const newPage = 'index.html';
@@ -274,10 +302,19 @@ function setupNavListeners() {
             const homeLink = Array.from(navLinks).find(l => l.getAttribute('href').toLowerCase() === 'index.html');
             if (homeLink) {
                 homeLink.classList.add('active');
+                if (highlightRectangle) {
+                    const endPos = calculateRectanglePosition(homeLink);
+                    console.log(`Triggering logo transition to ${endPos}px for homepage`);
+                    highlightRectangle.style.left = `${endPos}px`;
+                    sessionStorage.setItem('highlightRectanglePos', endPos);
+                    sessionStorage.setItem('targetPage', newPage);
+                }
             }
 
-            console.log('Navigating to homepage');
-            window.location.href = newPage;
+            setTimeout(() => {
+                console.log('Navigating to homepage after 150ms delay');
+                window.location.href = newPage;
+            }, 150);
         });
     } else {
         console.warn('Logo link not found');
