@@ -97,10 +97,6 @@ function populateFooter() {
     const container = document.getElementById('footer-links');
     if (container) {
         container.innerHTML = [
-            { text: 'Home', href: 'index.html' },
-            { text: 'Features', href: 'features.html' },
-            { text: 'Elevate PRO', href: 'elevate-pro.html' },
-            { text: 'Contact Us', href: 'support.html' },
             { text: 'Privacy Policy', href: '/privacy-policy' },
             { text: 'Terms of Service', href: '/terms-of-service' }
         ].map(item => `<a href="${item.href}" class="hover:text-white transition-colors duration-200">${item.text}</a>`).join('');
