@@ -11,9 +11,9 @@ const features = [
 ];
 
 const stats = [
-    { indir="0" value: "500K+", desc: "Waitlist Sign-Ups" },
-    { indir="1" svg: `<svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`, desc: "Syncs with your favorite fitness tools" },
-    { indir="2" title: "Your Fitness Revolution", desc: "Strength, endurance, and transformation—all in one app.", chart: true }
+    { value: "500K+", desc: "Waitlist Sign-Ups" },
+    { svg: `<svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`, desc: "Syncs with your favorite fitness tools" },
+    { title: "Your Fitness Revolution", desc: "Strength, endurance, and transformation—all in one app.", chart: true }
 ];
 
 const proSteps = [
@@ -184,8 +184,22 @@ async function loadIncludes() {
     }
 }
 
+function calculateRectanglePosition(link) {
+    const rectangleWidth = 50;
+    const offsetAdjustment = (link.offsetWidth - rectangleWidth) / 2;
+    const position = link.offsetLeft + offsetAdjustment - 30; // Shift left by 5px
+    console.log(`Calculated position for link '${link.textContent}': ${position}px, link width: ${link.offsetWidth}px`);
+    return position;
+}
+
 function setActiveNavLink() {
     const navLinks = document.querySelectorAll('.nav-link');
+
+    if (!navLinks.length) {
+        console.warn('Navigation elements not found. Links:', navLinks.length);
+        return;
+    }
+
     const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
 
