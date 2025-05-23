@@ -832,6 +832,24 @@
     .hero-gradient { min-height: 100vh; }
 }
 
+.highlight-rectangle {
+    position: absolute;
+    bottom: -12px;
+    width: 50px;
+    height: 6px;
+    background-color: #3A86FF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+    transition: left 0.25s ease-in-out !important;
+}
+
+#nav-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 @keyframes popupAppear {
     0% { opacity: 0; transform: scale(0.9); }
     100% { opacity: 1; transform: scale(1); }
@@ -907,6 +925,10 @@
 
     .ecosystem-card p {
         font-size: 0.875rem;
+    }
+
+    .highlight-rectangle {
+        display: none;
     }
 }
 
