@@ -53,10 +53,9 @@
     object-fit: contain; 
     border-radius: 0.75rem; 
     flex-grow: 0; 
-    margin-top: auto; 
     margin-left: auto; 
     margin-right: auto; 
-    image-rendering: auto; /* Added to preserve original resolution */
+    image-rendering: auto;
 }
 
 /* Default feature-showcase for Workouts */
@@ -107,7 +106,7 @@
 /* Add this new rule for feature-block-4 image in the Workouts section */
 .feature-showcase .feature-block-4 img {
     transform: translateY(32px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase .feature-block-5 { 
@@ -121,21 +120,23 @@
     margin-bottom: 0;
 }
 .feature-showcase .feature-block-1 img {
-    width: 85%; 
-    max-height: 100%; 
-    image-rendering: auto; /* Added */
+    width: 90%; 
+    max-height: 80%; 
+    transform: translateY(-10px); 
+    margin-top: 0; 
+    image-rendering: auto;
 }
 
 /* Specific adjustments for feature-block-2 (Generate Workouts Using Our AI) */
 .feature-showcase .feature-block-2 img {
     transform: translateY(32px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Specific adjustments for feature-block-3 (Track your Progress) */
 .feature-showcase .feature-block-3 img {
     filter: brightness(100%);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Specific adjustments for feature-block-5 (The Ultimate Exercise Library) */
@@ -150,7 +151,7 @@
     bottom: 0px; 
     left: 50%; 
     transform: translateX(-50%); 
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Nutrition section styles */
@@ -175,7 +176,7 @@
     width: 120%;
     max-height: 95%;
     transform: translateY(32px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-nutrition .feature-block-2 {
@@ -187,7 +188,7 @@
 .feature-showcase-nutrition .feature-block-2 img {
     max-height: 80%;
     transform: translateY(32px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-nutrition .feature-block-3 {
@@ -206,7 +207,7 @@
 
 .feature-showcase-nutrition .feature-block-4 img {
     transform: translateY(32px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-nutrition .feature-block-5 {
@@ -217,7 +218,7 @@
 }
 .feature-showcase-nutrition .feature-block-5 img {
     transform: translateY(6px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Feature-showcase-social for Social section */
@@ -270,7 +271,7 @@
     margin: 0;
     object-fit: contain;
     border-radius: 0.75rem;
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-social .feature-block-2 { 
@@ -305,12 +306,12 @@
     object-fit: contain;
     border-radius: 0.75rem;
     transform: translateY(84px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-social .feature-block-3 img { 
     transform: translateY(30px); 
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .feature-showcase-social .feature-block-3 { 
@@ -375,7 +376,7 @@
     position: relative;
     right: 0;
     transform: translateY(69px);
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Mobile Responsiveness */
@@ -405,7 +406,7 @@
         max-height: 60%; 
         object-fit: contain; 
         margin-top: auto; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     /* Workouts Section */
@@ -413,14 +414,16 @@
         max-height: clamp(500px, 70vh, 1000px); 
     }
     .feature-showcase .feature-block-1 img {
-        width: 85%; 
-        max-height: 75%; 
-        image-rendering: auto; /* Added */
+        width: 90%; 
+        max-height: 65%; 
+        transform: translateY(-10px); 
+        margin-top: 0; 
+        image-rendering: auto;
     }
     .feature-showcase .feature-block-2 img {
         transform: translateY(32px); 
         max-height: 60%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
     .feature-showcase .feature-block-5 img {
         width: 110%; 
@@ -428,26 +431,26 @@
         position: static; 
         transform: none; 
         margin: 0 auto;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     /* Nutrition Section */
     .feature-showcase-nutrition .feature-block-1 img {
         width: 120%; 
         max-height: 60%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
     .feature-showcase-nutrition .feature-block-2 img {
         width: 100%; 
         max-height: 60%;
         transform: translateY(32px); 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
     .feature-showcase-nutrition .feature-block-5 img {
         width: 100%; 
         max-height: 60%;
         transform: translateY(6px); 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     /* Social Section */
@@ -491,7 +494,7 @@
         margin: 0 auto; 
         transform: none; 
         position: static; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-social .feature-block-1 {
@@ -502,7 +505,7 @@
         width: 90%; 
         max-height: 55%; 
         object-fit: contain; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-social .feature-block-2 .text-container {
@@ -512,14 +515,14 @@
     .feature-showcase-social .feature-block-2 img {
         width: 90%;
         max-height: 55%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-social .feature-block-3 img {
         width: 90%; 
         max-height: 55%; 
         object-fit: contain; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-social .feature-block-4 {
@@ -542,14 +545,14 @@
     .feature-showcase-social .feature-block-4 img {
         width: 90%;
         max-height: 55%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 }
 
 .feature-showcase-nutrition .feature-block-1 img,
-.feature-showcase-nutrition .feature-block-4 img { min-height: 101px; image-rendering: auto; /* Added */ }
+.feature-showcase-nutrition .feature-block-4 img { min-height: 101px; image-rendering: auto; }
 .feature-showcase-nutrition .feature-block-2 img,
-.feature-showcase-nutrition .feature-block-3 img { min-height: 135px; image-rendering: auto; /* Added */ }
+.feature-showcase-nutrition .feature-block-3 img { min-height: 135px; image-rendering: auto; }
 
 @media (min-width: 1440px) {
     .feature-showcase,
@@ -560,28 +563,36 @@
 
     .feature-block h3 { font-size: clamp(1.25rem, 2vw, 2rem); }
     .feature-block p { font-size: clamp(0.875rem, 1.5vw, 1rem); }
-    .feature-block img { max-height: 85%; image-rendering: auto; /* Added */ }
+    .feature-block img { max-height: 85%; image-rendering: auto; }
+
+    .feature-showcase .feature-block-1 img {
+        width: 95%; 
+        max-height: 85%; 
+        transform: translateY(-15px); 
+        margin-top: 0; 
+        image-rendering: auto;
+    }
 
     .feature-showcase .feature-block-2 img {
         max-height: 70%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-nutrition .feature-block-1 img {
         max-height: 95%; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase-nutrition .feature-block-2 img {
         max-height: 80%;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .feature-showcase .feature-block-5 img {
         width: 115%; 
         max-height: 125%; 
         bottom: 0px; 
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 }
 
@@ -707,7 +718,7 @@
     width: clamp(20px, 2vw, 30px);
     height: clamp(20px, 2vw, 30px);
     object-fit: contain;
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .popup-feature span {
@@ -734,7 +745,7 @@
     .popup-image {
         max-height: 40vh;
         width: auto;
-        image-rendering: auto; /* Updated to ensure consistency */
+        image-rendering: auto;
     }
 
     .popup-text-container {
@@ -762,7 +773,7 @@
     .popup-feature-icon {
         width: clamp(16px, 3vw, 20px);
         height: clamp(16px, 3vw, 20px);
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .popup-close {
@@ -851,14 +862,14 @@
 .checkmark-icon {
     width: 1rem;
     height: 1rem;
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .circle-icon {
     width: 0.5rem;
     height: 0.5rem;
     opacity: 0.5;
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 /* Ecosystem Integration Section */
@@ -881,7 +892,7 @@
     object-fit: cover;
     border-radius: 0.75rem;
     margin-bottom: 1rem;
-    image-rendering: auto; /* Added */
+    image-rendering: auto;
 }
 
 .ecosystem-card h3 {
@@ -905,7 +916,7 @@
 
     .ecosystem-card img {
         height: 10rem;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .ecosystem-card h3 {
@@ -917,14 +928,14 @@
     }
 
     .highlight-rectangle {
-        display: none; /* Hide highlight rectangle on mobile */
+        display: none;
     }
 }
 
 @media (min-width: 1440px) {
     .ecosystem-card img {
         height: 14rem;
-        image-rendering: auto; /* Added */
+        image-rendering: auto;
     }
 
     .ecosystem-card h3 {
@@ -940,16 +951,16 @@
 .nav-link {
     position: relative;
     padding: 0.5rem 1.2rem;
-    color: #374151; /* text-gray-700 */
+    color: #374151;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #2563eb; /* hover:text-blue-600 */
+    color: #2563eb;
 }
 
 .nav-link.active {
-    color: #3A86FF !important; /* Match inline style specificity */
+    color: #3A86FF !important;
     font-weight: bold;
 }
