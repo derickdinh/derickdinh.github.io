@@ -79,7 +79,7 @@ function populateMissionStats() {
     if (container) {
         container.innerHTML = missionStats.map(stat => `
             <div class="p-6">
-                <h3 class="text-5xl font incorporated text-blue-600 mb-4">${stat.value}</h3>
+                <h3 class="text-5xl font-bold text-blue-600 mb-4">${stat.value}</h3>
                 <p class="text-gray-600">${stat.desc}</p>
             </div>
         `).join('');
@@ -176,7 +176,7 @@ async function loadIncludes() {
             if (!response.ok) throw new Error(`Failed to load ${file}`);
             const html = await response.text();
             elem.outerHTML = html;
-            console.log(` ABOVE ${file} successfully`);
+            console.log(`Loaded ${file} successfully`);
         } catch (error) {
             console.error(error);
             elem.innerHTML = `<p>Error loading ${file}</p>`;
@@ -184,60 +184,23 @@ async function loadIncludes() {
     }
 }
 
-function calculateRectanglePosition(link) {
-    const rectangleWidth = 50;
-    const offsetAdjustment = (link.offsetWidth - rectangleWidth) / 2;
-    const position = link.offsetLeft + offsetAdjustment - 30; // Shift left by 5px
-    console.log(`Calculated position for link '${link.textContent}': ${position}px, link width: ${link.offsetWidth}px`);
-    return position;
-}
-
 function setActiveNavLink() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const highlightRectangle = document.getElementById('highlight-rectangle');
-
-    if (!navLinks.length || !highlightRectangle) {
-        console.warn('Navigation elements not found. Links:', navLinks.length, 'Rectangle:', !!highlightRectangle);
-        return;
-    }
-
     const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
 
-    let activeLink = null;
     navLinks.forEach(link => {
         let href = link.getAttribute('href').toLowerCase().replace(/\/+$/, '');
         href = (href === '' || href === '/' || href === 'index.html') ? 'index.html' : href;
         link.classList.remove('active');
         if (href === currentPage) {
             link.classList.add('active');
-            activeLink = link;
         }
     });
-
-    if (!activeLink) {
-        console.warn('No active link found, defaulting to first link');
-        activeLink = navLinks[0];
-        activeLink.classList.add('active');
-    }
-
-    const endPos = calculateRectanglePosition(activeLink);
-    const storedPos = sessionStorage.getItem('highlightRectanglePos');
-    if (storedPos && currentPage === sessionStorage.getItem('targetPage')) {
-        console.log(`Restoring stored position: ${storedPos}px for page: ${currentPage}`);
-        highlightRectangle.style.left = `${storedPos}px`;
-        sessionStorage.removeItem('highlightRectanglePos');
-        sessionStorage.removeItem('targetPage');
-    } else {
-        console.log(`Setting highlight rectangle to ${endPos}px for page: ${currentPage} (no stored position)`);
-        highlightRectangle.style.left = `${endPos}px`;
-    }
-    highlightRectangle.style.display = 'block';
 }
 
 function handleNavClick(link) {
     const navLinks = document.querySelectorAll('.nav-link');
-    const highlightRectangle = document.getElementById('highlight-rectangle');
     const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
     let newPage = link.getAttribute('href').toLowerCase().replace(/\/+$/, '');
@@ -250,15 +213,7 @@ function handleNavClick(link) {
 
     navLinks.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
-
-    if (highlightRectangle) {
-        const endPos = calculateRectanglePosition(link);
-        console.log(`Triggering transition to ${endPos}px for page: ${newPage}`);
-        highlightRectangle.style.left = `${endPos}px`;
-        sessionStorage.setItem('highlightRectanglePos', endPos);
-        sessionStorage.setItem('targetPage', newPage);
-        setTimeout(() => {
-    }
+    window.location.href = link.getAttribute('href');
 }
 
 function setupNavListeners() {
@@ -282,7 +237,6 @@ function setupNavListeners() {
         logoLink.addEventListener('click', (e) => {
             e.preventDefault();
             const navLinks = document.querySelectorAll('.nav-link');
-            const highlightRectangle = document.getElementById('highlight-rectangle');
             const currentPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
             const currentPage = (currentPath === '' || currentPath === '/' || currentPath.endsWith('index.html')) ? 'index.html' : currentPath.split('/').pop();
             const newPage = 'index.html';
@@ -296,15 +250,8 @@ function setupNavListeners() {
             const homeLink = Array.from(navLinks).find(l => l.getAttribute('href').toLowerCase() === 'index.html');
             if (homeLink) {
                 homeLink.classList.add('active');
-                if (highlightRectangle) {
-                    const endPos = calculateRectanglePosition(homeLink);
-                    console.log(`Triggering logo transition to ${endPos}px for homepage`);
-                    highlightRectangle.style.left = `${endPos}px`;
-                    sessionStorage.setItem('highlightRectanglePos', endPos);
-                    sessionStorage.setItem('targetPage', newPage);
-                }
+                window.location.href = logoLink.getAttribute('href');
             }
-
         });
     } else {
         console.warn('Logo link not found');
