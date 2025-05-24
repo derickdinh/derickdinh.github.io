@@ -1,5 +1,8 @@
+/* General shadow and gradient styles */
 .custom-shadow { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-.header-gradient { background: linear-gradient(90deg, #ffffff, #ffffff); }
+.header-gradient { 
+    background: linear-gradient(90deg, #ffffff, #ffffff); 
+}
 .hero-gradient { 
     background: linear-gradient(120deg, #c1dafb, #ffffff); 
     min-height: 100vh; 
@@ -832,13 +835,6 @@
     .hero-gradient { min-height: 100vh; }
 }
 
-
-#nav-menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
 @keyframes popupAppear {
     0% { opacity: 0; transform: scale(0.9); }
     100% { opacity: 1; transform: scale(1); }
@@ -955,9 +951,19 @@
 .terms-of-service h1,
 .privacy-policy h2,
 .terms-of-service h2 {
-    background-color: #f3f4f6; /* Light gray background to make rounded corners visible */
+    background-color: #f3f4f6;
     padding: 1rem 1.5rem;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-    display: inline-block; /* Ensures the background wraps tightly around the text */
+    display: inline-block;
+}
+
+/* Header-specific styles */
+header {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
