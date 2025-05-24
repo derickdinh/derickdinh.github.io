@@ -258,12 +258,6 @@ function handleNavClick(link) {
         sessionStorage.setItem('highlightRectanglePos', endPos);
         sessionStorage.setItem('targetPage', newPage);
         setTimeout(() => {
-            console.log(`Navigating to: ${newPage} after 150ms delay`);
-            window.location.href = newPage;
-        }, 150);
-    } else {
-        console.log(`Navigating to: ${newPage} (no rectangle found)`);
-        window.location.href = newPage;
     }
 }
 
@@ -311,10 +305,6 @@ function setupNavListeners() {
                 }
             }
 
-            setTimeout(() => {
-                console.log('Navigating to homepage after 150ms delay');
-                window.location.href = newPage;
-            }, 150);
         });
     } else {
         console.warn('Logo link not found');
